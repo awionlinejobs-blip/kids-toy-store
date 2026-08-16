@@ -8,8 +8,7 @@ import {
   type ReactNode,
 } from "react";
 
-import type { Product } from "@/db/schema";
-
+import type { Product } from "@/schema";
 type CartItem = Product & {
   quantity: number;
 };
