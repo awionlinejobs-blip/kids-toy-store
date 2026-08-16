@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useCart } from "@/context/CartContext";
-import type { Product } from "@/schema";
-
+import { useCart } from "./CartContext";
 export default function AddToCartButton({
   product,
 }: {
