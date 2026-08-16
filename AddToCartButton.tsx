@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
-import type { Product } from "@/db/schema";
-
+import type { Product } from "@/schema";
 export default function AddToCartButton({ product }: { product: Product }) {
   const { addItem, openCart } = useCart();
   const [qty, setQty] = useState(1);
