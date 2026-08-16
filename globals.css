@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --brand-coral: #ff5d73;
+  --brand-amber: #ffb02e;
+  --brand-teal: #22c3b7;
+  --brand-purple: #9b6dff;
+  --ink: #1f1235;
+}
+
+@theme inline {
+  --font-display: var(--font-fredoka);
+  --font-body: var(--font-nunito);
+  --color-ink: #1f1235;
+  --color-brand: #ff5d73;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-nunito), system-ui, sans-serif;
+  background-color: #fff7f2;
+  color: #2a1a3e;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-fredoka), system-ui, sans-serif;
+}
+
+/* Hide scrollbar for horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-22px) rotate(-4deg); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-fade-in {
+  animation: fade-in 0.8s ease both;
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+.animate-float-slower {
+  animation: float-slower 8s ease-in-out infinite;
+}
+.animate-wiggle {
+  animation: wiggle 2.5s ease-in-out infinite;
+}
+.animate-pop {
+  animation: pop 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+.reveal {
+  opacity: 0;
+}
+.reveal.reveal-visible {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px -12px rgba(155, 65, 90, 0.28);
+}
+.card-shadow-lg {
+  box-shadow: 0 24px 60px -20px rgba(120, 50, 90, 0.35);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
